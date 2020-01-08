@@ -117,7 +117,7 @@
 			
 			
 			<div>
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=5308028&auto=1&height=66"></iframe>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=5308028# 网易云分享的音乐ID(更换音乐请更改此配置项)&auto=1&height=66"></iframe>
 			</div>
 			
 				
@@ -234,244 +234,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>说起来也惭愧（捂脸），作为一名计算机专业的大学生竟然大二才知道写博客这个事情。大一可能是只知道学习了，还好大一一年学习拿到了国家励志奖学金，也算没白白度过这一年。近期看到身边的大佬都在每天一篇的博客更新，询问一下才知道写博客是一件非常好的事情，通过写博客可以对自己学习的知识进行一下全面总结，而且将自己理解的内容写下来不但可以记得更加深刻而且还可以查缺补漏，后期忘了也可以翻开来回顾一下。哎，我本来兴致勃勃的打开刚建好的博客，准备写一篇博客，可是看到要用markdown语法来写，就查阅了网上一些其它大佬的博客学习了一下，就想了一下准备拿markdown语法使用来写自己的第一篇博客，可以在学习博客编写语法的同时了解一下博客的上传步骤……….</p>
-<p>我这里只是写一下常用markdown语法，详细可以参考一下<a href="https://blog.csdn.net/u014061630/article/details/81359144" target="_blank" rel="noopener">markdown详解</a></p>
-<h2 id="markdown简介"><a href="#markdown简介" class="headerlink" title="markdown简介"></a>markdown简介</h2><p><strong>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。语法简洁明了、学习容易，而且功能比纯文本更强，是编写博客最佳的文本语言</strong></p>
-<p><strong>来来来，话不多说搞起来</strong></p>
-<p>[TOC]</p>
-<h1 id="一，标题"><a href="#一，标题" class="headerlink" title="一，标题"></a>一，标题</h1><p><strong>相必大家写博客还是文章的时候第一件事就是写标题了吧，而标题的大小是不同的</strong></p>
-<p><strong>markdown里有六种级别的标题</strong></p>
-<p><strong>效果如下</strong></p>
-<h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><h4 id="四级"><a href="#四级" class="headerlink" title="四级"></a>四级</h4><h5 id="五级"><a href="#五级" class="headerlink" title="五级"></a>五级</h5><h6 id="六级"><a href="#六级" class="headerlink" title="六级"></a>六级</h6><p><strong>用法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 一级</span><br><span class="line">## 二级</span><br><span class="line">### 三级</span><br><span class="line">#### 四级</span><br><span class="line">##### 五级</span><br><span class="line">###### 六级</span><br><span class="line"></span><br><span class="line">ps：注意一共就有六级，所以#号最多到六个，当大于六个的时候默认为第六级标题</span><br><span class="line">ps：注意#号与标题之间有一个空格</span><br></pre></td></tr></table></figure>
-
-<h1 id="二，字体"><a href="#二，字体" class="headerlink" title="二，字体"></a>二，字体</h1><p><strong>在写文章时如果有一些比较重要的内容需要凸显出来，就需要做一些特殊的处理，比如加粗，斜体，加颜色等</strong></p>
-<p><strong><em>字体状态效果</em></strong></p>
-<p><em>这里是斜体</em>        <em>这里是斜体</em></p>
-<p><strong>这里是粗体</strong></p>
-<p><strong><em>这里是倾斜加粗</em></strong></p>
-<p><del>这里是删除线</del>    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*这里是斜体*   _这里是斜体_</span><br><span class="line">**这里是粗体**</span><br><span class="line">***这里是斜体加粗***</span><br><span class="line">~~这里是删除项~~</span><br><span class="line">ps：注意这里的符号与字体之间空格不是必须的，不加没影响，加了就相当于帮空格也进行相应的操作，比如帮空格加粗，变斜等</span><br></pre></td></tr></table></figure>
-
-<p><strong>字体的颜色与大小改变需要用到简单的代码实现，我看到其他的方式改变字体的颜色也可以，但是有的我测试的时候用不了，我感觉这个方式也挺好的，可以同时设置字体的颜色和大小</strong></p>
-<p><strong>具体的效果如下</strong></p>
-<p><font color=gray size=4>我是gray</font><br><font color=green size=4>我是green</font><br><font color=hotpink size=4>我是hotpink</font><br><font color=LightCoral size=4>我是LightCoral</font><br><font color=LightSlateGray size=4>我是LightSlateGray</font><br><font color=orangered size=4>我是orangered</font><br><font color=red size=4>我是red</font><br><font color=springgreen size=4>我是springgreen</font><br><font color=Turquoise size=4>我是Turquoise</font></p>
-<p><strong>用法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;font color&#x3D;gray size&#x3D;4&gt;我是gray&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;green size&#x3D;4&gt;我是green&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;hotpink size&#x3D;4&gt;我是hotpink&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;LightCoral size&#x3D;4&gt;我是LightCoral&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;LightSlateGray size&#x3D;4&gt;我是LightSlateGray&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;orangered size&#x3D;4&gt;我是orangered&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;red size&#x3D;4&gt;我是red&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;springgreen size&#x3D;4&gt;我是springgreen&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;Turquoise size&#x3D;4&gt;我是Turquoise&lt;&#x2F;font&gt;</span><br><span class="line">ps：这里就要考考大家的英语词汇量了，相必大家英语肯定very good</span><br></pre></td></tr></table></figure>
-
-<p><strong>这里顺便加上背景色的设置方法</strong></p>
-<p><em>单层背景色</em></p>
-<table><td bgcolor=pink> 
-我后面的是pink 
-</table>
-
-<p><em>双层背景色</em></p>
-<table><td bgcolor=mistyrose>
-<table><td bgcolor=pink>
-我是。。。
-</table>
-</table>
-
-
-
-<p><strong>大家点击背景就有具体的代码，就不再写使用方法了</strong></p>
-<p><strong>PS：注意一下上米最后的‘</table>’可不加</strong></p>
-<p><strong>这里推荐几个比较不错的背景色</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">PeachPuff</span><br><span class="line">PapayaWhip</span><br><span class="line">PaleGreen</span><br><span class="line">PaleGoldenRod</span><br><span class="line">MistyRose</span><br><span class="line">Linen</span><br><span class="line">LightPink</span><br><span class="line">LightGoldenRodYellow</span><br><span class="line">Feldspar</span><br><span class="line">DarkSalmon</span><br><span class="line">BurlyWood</span><br></pre></td></tr></table></figure>
-
-<p><strong>有的人喜欢用特定的字体，这里也可以设置字体的种类</strong></p>
-<p><font face="黑体">我是黑体字</font><br><font face="微软雅黑">我是微软雅黑</font><br><font face="STCAIYUN">我是华文彩云( STCAIYUN )</font></p>
-<h1 id="三，引用，分割线，代码块"><a href="#三，引用，分割线，代码块" class="headerlink" title="三，引用，分割线，代码块"></a>三，引用，分割线，代码块</h1><p><strong>引用与分割线用法比较简单，我就不做太多的讲解</strong></p>
-<ul>
-<li><strong>引用</strong></li>
-</ul>
-<blockquote>
-<p>引用一</p>
-<blockquote>
-<p>引用二</p>
-<blockquote>
-<p>引用三</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用方式&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>分割：分割其实就是上下文之间的分割线</li>
-</ul>
-<hr>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">分割线的使用，使用三个或以上的* 或 -即可</span><br><span class="line">如上文中的两种使用方法为</span><br><span class="line">---</span><br><span class="line">***</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>代码块的快捷插入</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码块的快捷插入为，英文模式下的三个&#96;&#96;&#96;号 esc下的那个键</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="四，列表"><a href="#四，列表" class="headerlink" title="四，列表"></a>四，列表</h1><p><strong>比如你要罗列一件事物的一些性质，这时就需要有一个列表来显示，增加事务的条理性，有两种列表，无序列表，有序列表</strong></p>
-<ol>
-<li>无序列表</li>
-</ol>
-<p>列表形式</p>
-<ul>
-<li><p>无序表1           </p>
-</li>
-<li><p>无需表2</p>
-</li>
-<li><p>无需表3</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">无序表使用+ * -表示 使用与表之间有一个空格，用于缩进</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p>有序列表</p>
-</li>
-<li><p>有序表1</p>
-</li>
-<li><p>有序表2</p>
-</li>
-<li><p>有序表3</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">有序表是带有顺序的列表，用于具有一定顺序的条例罗列时使用，</span><br><span class="line">ps：有序表的用法是由数字加上英语的逗号组成，逗号与列表之间有一个空格，便于缩进</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps：注意事项，大家在使用列表时无论是无序列表还是有序列表时，大家会发现一旦一开始使用列表时，你按回车时他会自动变为下一条列表，这时大家如果列表已经列完了，想退出列表，只用再按一下回车键就可以退出列表</span><br></pre></td></tr></table></figure>
-
-<h1 id="五，图片，链接插入"><a href="#五，图片，链接插入" class="headerlink" title="五，图片，链接插入"></a>五，图片，链接插入</h1><p><strong>大家在编写文章时，为了增加文章的优美性及必要性大家可能会需要用到一些图片或链接</strong></p>
-<ul>
-<li><p><em>图片的插入，图片的插入有两种插入形式</em></p>
-<ul>
-<li>本机图片的插入</li>
-</ul>
-<img src="E:\手机照片\爱壁纸UWP\美女\美女 - 6.jpg" alt="美女" style="zoom:33%;" />
-
-</li>
-</ul>
-<p>​      </p>
-<ul>
-<li>网上图片的插入</li>
-</ul>
-<img src="http://cdn.duitang.com/uploads/item/201412/24/20141224010926_crKEt.thumb.700_0.jpeg" alt="蜡笔小新" style="zoom:50%;" />
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">插入本机图片只用在图片路径选中本地图片的路径即可</span><br><span class="line">插入网络图片在图片的路径中填写网络图片的网络路径即可</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>链接的插入</strong></li>
-</ul>
-<p><a href="www.baidu.com">百度</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用方法 英文括号[]加上英文括号 ，[]中填写该链接的介绍（）中填写链接地址</span><br><span class="line">ps：插入链接使用快捷键比较推荐</span><br></pre></td></tr></table></figure>
-
-<h1 id="六，表格"><a href="#六，表格" class="headerlink" title="六，表格"></a>六，表格</h1><p><strong>表格使用markdown自带的使用方式即可，自带的表格使用比较简单</strong></p>
-<p><strong>如果你要想秀操作的话，当然也与另一种了</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">姓名|性别|年龄</span><br><span class="line"></span><br><span class="line">：--|：--：|--：     &lt;!--这里的冒号指的是下面图表中内容对呀的向那边靠齐，在左边左靠齐两边都有中间靠齐&gt;</span><br><span class="line"></span><br><span class="line">张三|男|10</span><br><span class="line"></span><br><span class="line">李四|男|20</span><br><span class="line"></span><br><span class="line">王五|男|30</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>姓名</th>
-<th>性别</th>
-<th>年龄</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>张三</td>
-<td>男</td>
-<td>10</td>
-</tr>
-<tr>
-<td>李四</td>
-<td>男</td>
-<td>20</td>
-</tr>
-<tr>
-<td>王五</td>
-<td>男</td>
-<td>30</td>
-</tr>
-</tbody></table>
-<h1 id="七，有趣的图表"><a href="#七，有趣的图表" class="headerlink" title="七，有趣的图表"></a>七，有趣的图表</h1><ul>
-<li><strong>制作一份待办事宜—-Todo 列表</strong></li>
-</ul>
-<ol>
-<li><strong>两种制作方法，第一种使用自带的方式</strong></li>
-</ol>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 事项一</li>
-<li><input disabled="" type="checkbox"> 事项二</li>
-<li><input disabled="" type="checkbox"> 事项三</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">该方法使用的是markdown软件自带的方法，右击鼠标会有一个框框，点击后就是，可以用过点击框框勾选</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><strong>使用代码非软件自带</strong></li>
-</ol>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 事项一</li>
-<li><input disabled="" type="checkbox"> 事项二</li>
-<li><input disabled="" type="checkbox"> 事项三</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">该方法使用-[]以及-[x]两种形式 ，括号带x效果为勾选的，不带x表示不勾选</span><br><span class="line">ps：其实这两种方法的使用难度差不多，后面使用起来看起来更加秀一点</span><br></pre></td></tr></table></figure>
-
-<h1 id="八，常用快捷键"><a href="#八，常用快捷键" class="headerlink" title="八，常用快捷键"></a>八，常用快捷键</h1><table>
-<thead>
-<tr>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>加粗</td>
-<td>Ctrl + B</td>
-</tr>
-<tr>
-<td>斜体</td>
-<td>Ctrl + I</td>
-</tr>
-<tr>
-<td>引用</td>
-<td>Ctrl + Q</td>
-</tr>
-<tr>
-<td>插入链接</td>
-<td>Ctrl + L</td>
-</tr>
-<tr>
-<td>插入代码</td>
-<td>Ctrl + K</td>
-</tr>
-<tr>
-<td>插入图片</td>
-<td>Ctrl + G</td>
-</tr>
-<tr>
-<td>提升标题</td>
-<td>Ctrl + H</td>
-</tr>
-<tr>
-<td>有序列表</td>
-<td>Ctrl + O</td>
-</tr>
-<tr>
-<td>无序列表</td>
-<td>Ctrl + U</td>
-</tr>
-<tr>
-<td>横线</td>
-<td>Ctrl + R</td>
-</tr>
-<tr>
-<td>撤销</td>
-<td>Ctrl + Z</td>
-</tr>
-<tr>
-<td>重做</td>
-<td>Ctrl + Y</td>
-</tr>
-</tbody></table>
-<h1 id="九，总结"><a href="#九，总结" class="headerlink" title="九，总结"></a>九，总结</h1><p><strong>这是我用markdown写的第一篇文章，主要是用于学习markdown的使用以及博客编写的以及上传的流程，真心感觉写博客真的是一件非常好的事情，你可以在写的过程中进行知识点的总结，不但可以加强自己的理解而且可以查缺补漏发现自己迷惑的地方，而且后期拿来回顾也是一件非常好的事情，而且自己写的文章别人可以看到说不定可以帮助解决别的问题也是非常值得的事，这是我作为初学者的角度来总结markdown的使用，可以更加贴合初学者的角度，更加了解初学者需要什么，以及如何能够看得懂，通过写这篇文章我发现我对markdown的了解有了更一步的加深，第一次写写的可能不好，后期我会继续努力的。</strong></p>
-
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>说起来也惭愧（捂脸），作为一名计算机专业的大学生竟然大二才知道写博客这个事情。大一可能是只知道学习了，还好大一一年学习拿到了国家励志奖学金，也算没白白度过这一年。近期看到身边的大佬都在每天一篇的博客更新，询问一下才知道写博客是一件非常好的事情，通过写博客可以对自己学习的知识进行一下全面总结，而且将自己理解的内容写下来不但可以记得更加深刻而且还可以查缺补漏，后期忘了也可以翻开来回顾一下。哎，我本来</p>
+    
+    <a class="article-more-a" href="/2020/01/08/Markdown%E8%AF%A6%E8%A7%A3/#more">more >></a>
+    
     
 
     
@@ -548,17 +314,10 @@
     <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a>
+    
+    <a class="article-more-a" href="/2019/12/24/hello-world/#more">more >></a>
+    
     
 
     
