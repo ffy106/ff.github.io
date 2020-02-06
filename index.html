@@ -205,6 +205,356 @@
             
 
   
+    <article id="post-Git与github全面讲解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/02/06/Git%E4%B8%8Egithub%E5%85%A8%E9%9D%A2%E8%AE%B2%E8%A7%A3/" target="_blank">Git与github全面讲解.md</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/02/06/Git%E4%B8%8Egithub%E5%85%A8%E9%9D%A2%E8%AE%B2%E8%A7%A3/" class="archive-article-date">
+        <time datetime="2020-02-06T01:31:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-06</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><strong>Git详细讲解及使用教程可以参考以下网址</strong></p>
+<ul>
+<li><a href="https://baike.baidu.com/item/GIT/12647237?fr=aladdin" target="_blank" rel="noopener">Git讲解—1</a></li>
+<li><a href="https://www.w3cschool.cn/git/git-workspace-index-repo.html" target="_blank" rel="noopener">Git讲解—2</a></li>
+</ul>
+<p>大家可以从官网下载Git  <a href="http://git-scm.com" target="_blank" rel="noopener">Git官网</a></p>
+<p><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1580950391&di=95680387fc0a31d0fd1899e899b33f08&src=http://blog.lihaocheng.cn/wp-content/uploads/2019/03/19c3ae1c30f4c948e3de8c2c4226cebc.jpg" alt="git"></p>
+<h2 id="一，什么是Git"><a href="#一，什么是Git" class="headerlink" title="一，什么是Git"></a>一，什么是Git</h2><p>Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目</p>
+<p><strong>什么是分布式？分布式相比于集中式区别在哪里？</strong></p>
+<ul>
+<li>SVN集中式版本控制系统，Git分布式版本控制系统。</li>
+<li>分布式是将一个文件或项目分布给多个开发者进行同时开发，多人同时操作可以提高工作的效率。</li>
+<li>分布式相比于集中式的最大区别在于开发者可以提交到本地，每个开发者通过克隆（git clone），在本地机器上拷贝一个完整的Git仓库。</li>
+</ul>
+<p><strong>版本控制工具应具备哪些功能</strong></p>
+<ul>
+<li>协同修改<ul>
+<li>多人同时修改服务器端的同一个文件，并且各个修改之间不会发生冲突覆盖情况</li>
+</ul>
+</li>
+<li>数据备份<ul>
+<li>不仅可以保存目录和文件的当前状态，而且可以保存文件的每一个提交过的历史状态</li>
+</ul>
+</li>
+<li>版本管理<ul>
+<li>在保存每一个版本的文件信息的时候要做到不保存重复数据，以节约存储空间，提高运行效率，这方面SVN采用的是增量式管理的方式，而git采用的是系统文件快照的方式</li>
+</ul>
+</li>
+<li>权限控制<ul>
+<li>对团队开发参与人员的权限的控制</li>
+<li>对团队外开发者贡献的代码进行审核—-Git独有</li>
+</ul>
+</li>
+<li>历史记录<ul>
+<li>可以查看修改人，修改时间，修改内容，日志信息</li>
+<li>将本地文件恢复到某一个历史状态</li>
+</ul>
+</li>
+<li>分支管理<ul>
+<li>允许开发团队在工作中多条线路同时推进任务，进一步提高效率</li>
+</ul>
+</li>
+</ul>
+<p><strong>Git优势</strong></p>
+<ul>
+<li>大部分在本地完成，不需要联网</li>
+<li>完整性保证</li>
+<li>分支操作非常快速流畅</li>
+<li>与Linux命令全面兼容</li>
+</ul>
+<p><strong>Git结构</strong></p>
+<ul>
+<li>Git主要分为三大块结构：工作区、暂存区、本地库。</li>
+<li>工作区：就是写代码的地方，新建文件修改文件的地方。</li>
+<li>暂存区：就是打算要提交的文件暂时还没有提交，临时保存文件的地方，你可以帮它提交到本地库也可以撤回来，撤回来后在本地库中就不会再有该文件的记录。</li>
+<li>本地库：提交的历史版本，每一次提交的文件</li>
+</ul>
+<hr>
+<ul>
+<li>文件三大块的工作关系：在工作区新建文件编写代码完成后用<strong>git add</strong>将完成的该文件添加到暂存区，只是临时保存还没有提交。将暂存区域的暂存文件提交到本地库中用<strong>git commit</strong>命令，添加到本地库中就将该文件保存到本地文件中。</li>
+</ul>
+<p><strong>Git和代码托管</strong></p>
+<ul>
+<li>github其实就是Git的一个代码托管中心</li>
+<li>局域网环境下可以用GitLab服务器来进行代码托管</li>
+<li>外网环境下可以用：github、码云来进行代码托管</li>
+<li>代码托管中兴主要是维护远程库</li>
+</ul>
+<p><strong>本地库和远程库与代码托管中心的关系</strong></p>
+<ul>
+<li>团队内部协作<ul>
+<li>比如在一个团队内部开发一个项目，有一个项目组长，该组长建立一个本地库，然后在代码托管中心建立一个远程库，然后用命令将本地库发送到远程库，然后团队其它成员就可以通过远程库来下载项目信息文件，然后团队成员完成代码后上传到代码托管中心的远程库中，然后组长在将团队成员的代码拖到本地库中。</li>
+</ul>
+</li>
+<li>跨团队合作<ul>
+<li>就是两个团队合作，另一个团队将第一个团队中的远程库复制一份在代码托管中心，然后将项目修改后上传到代码托管中心复制后的远程库中，然后将复制后的远程库连接到第一个远程库，第一个远程库的建立者进行审核，通过后就可以上传到第一个远程库中。</li>
+</ul>
+</li>
+</ul>
+<h2 id="二，Git命令行操作"><a href="#二，Git命令行操作" class="headerlink" title="二，Git命令行操作"></a>二，Git命令行操作</h2><ul>
+<li><p>本地库初始化</p>
+<ul>
+<li>命令：git init</li>
+<li>就是在当前文件夹内建立一个隐藏的文件夹.git就是本地库</li>
+<li>注意：.git目录中存放的是本地库相关的子目录和文件，不要删除，也不要胡乱修改</li>
+</ul>
+</li>
+<li><p>设置签名</p>
+<ul>
+<li><p>签名的形式  用户名：tom    email地址：goodmorninig@****作用主要是区分开发人员的身份</p>
+</li>
+<li><p>辨析：这里设置的签名和登录远程库（代码托管中心）的账号、密码是没有任何关系</p>
+</li>
+<li><p>命令：项目级别/创库级别 ： 仅在当前本地库范围内有效</p>
+<p>​            系统用户级别：登录当前操作系统的用户范围</p>
+<p>​            优先级：项目级别/创库级别 &gt; 系统用户级别</p>
+<p>​             二者必须有一个</p>
+</li>
+<li><p>项目级别/创库级别：git config  user.name  tom </p>
+<p>​                                      git config  user.email  goodmorninig@****</p>
+</li>
+<li><p>系统用户级别：git config–global     user.name  tom</p>
+<p>​                             git config–global    user.email  goodmorninig@****</p>
+</li>
+<li><p>用户签名存放在：.git/config  可以用cat .git/config查看</p>
+</li>
+<li><p>系统用户签名存放位置：存放在家目录.gitconfig 在家目录中使用 cat .gitconfig查看</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="三，Git操作"><a href="#三，Git操作" class="headerlink" title="三，Git操作"></a>三，Git操作</h2><ul>
+<li><p>其实我们创建的目录在该目录中执行git命令，其实创建的这个目录就是工作区，你可以在其他环境或这个环境下写代码，写完代码后可以复制到这个目录中，则这个文件就暂存在这个暂存区内，你可以提交到本地库中，也就是.git文件夹中，也可以删除。</p>
+</li>
+<li><p>git status 查看git状态，提交状态，可提交文件等等</p>
+</li>
+<li><p>添加到暂存区，git add 文件名      </p>
+</li>
+<li><p>提交到本地库    git commit  文件名      提交的时候需要添加提交信息  如果不想使用vim编辑器，可以使用命令 git  commit -m “提交信息”  文件名</p>
+</li>
+<li><p>其实暂存区就是暂存要提交的文件，也就是计算机的缓存，将文件从暂存区内提交到本地库后，暂存区的该文件就会被删除</p>
+</li>
+<li><p>提交历史记录的查询</p>
+<p><img src="C:/Users/253192967fa/Desktop/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QQ%E6%88%AA%E5%9B%BE20200203110559.png" alt="提交记录"></p>
+<ul>
+<li>历史记录查询的命令为git log  </li>
+<li>其中commit后面的一长串信息为哈希值</li>
+<li>显示的有提交者的签名，和提交时间以及提交时的信息，其中（HEAD-&gt;master）表明这次提交为当前状态也就是最后一次提交</li>
+<li>按一定的格式显示记录日志，将每一次的状态以一行显示 git log –pretty=oneline</li>
+<li>git log –online   只显示哈希值的一部分</li>
+<li>git  relog  多加一个显示提交的次序，也就是你要回到某一个记录需要移动几步</li>
+</ul>
+</li>
+<li><p>Git获取以前的版本，前进后退，也就是HEAD指针的移动</p>
+<ul>
+<li>一共有三种方式：基于索引值操作、使用^符号、使用~符号</li>
+<li>基于索引值操作（推荐):git reset  –hard 索引值   其中索引值使用一部分就可以了，改变后改变的是项目目录中的文件夹，也就是你可以进行操作的文件。</li>
+<li>使用^符号：只能后退不能前进  后退一步  git reset –hard HEAD^  后退几步添加几个^符号</li>
+<li>使用<del>符号： 只能后退不能前进，当需要后退的步数较多时，再使用^符号就不太方便，这是使用</del>加数字代替，比如后退10步   git reset –hard HEAD~10</li>
+</ul>
+</li>
+<li><p>reset命令的三个参数对比</p>
+<ul>
+<li>–soft参数：不会影响工作区和暂存区，仅仅只会在本地库中移动一下HEAD指针</li>
+<li>–mixed参数：在本地库移动HEAD指针,同时重置（重新设置）一下暂存区</li>
+<li>–hard参数：在本地库移动HEAD指针、重置暂存区、重置工作区（也就是后退后会将工作区的文件直接改变为相对应的版本</li>
+</ul>
+</li>
+<li><p>永久删除文件后找回（提交到本地库后文件删除找回）</p>
+<ul>
+<li>通常指的是提交到本地库后删除文件，其实删除的文件是工作区内的文件，其实工作区、暂存区、本地库是相互连接的</li>
+<li>找回文件第一种是回退，回退到文件的上一步</li>
+</ul>
+</li>
+<li><p>添加到暂存区但未提交到本地库中文件删除</p>
+<ul>
+<li>git refset  –hard HEAD   </li>
+<li>刷新暂存区就是缓存本地库中指针指向的文件</li>
+</ul>
+</li>
+</ul>
+<p><strong>比较文件</strong></p>
+<ul>
+<li>显示文件修改前后的变化</li>
+<li>命令 git diff 文件名  ，显示该文件修改前后的变化</li>
+<li>比较文件与本地库中某一个版本的文件之间的差别，git diff HEAD 索引号 文件名 比较的是当前文件与索引文件之间的差别</li>
+</ul>
+<p><strong>分支管理</strong></p>
+<ul>
+<li><p>概念：在版本控制过程中，使用多条线路同时推进多个任务</p>
+</li>
+<li><p>优点：同时并行区推进多个功能的开发，提高开发效率</p>
+<ul>
+<li>​     各个分支在开发过程中，如果某一个分支开发失败，不会对其他分支            有任何影响，失败的分支删除重新开始即可</li>
+</ul>
+</li>
+<li><p>分支操作</p>
+<ul>
+<li>查看分支 git branch -v</li>
+<li>创建分支 git branch 分支名称</li>
+<li>切换分支  git checkout  分支名称</li>
+<li>合并分支   第一步：切换到接收修改的分支上，也就是合并到那个分支第二步：执行命令git merge  分支名</li>
+</ul>
+</li>
+<li><p>分支冲突</p>
+<ul>
+<li><p>也就是这么理解，在创建分子的时候分支的基础是一样的，含有相同的文件，而且合并后文件主干分支也含有分支的其他文件，而如果在两个分支将这一份文件都同时修改，那么下一次合并的时候该如何合并，该选择哪一个。</p>
+<p><img src="C:%5CUsers%5C253192967fa%5CDesktop%5C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CQQ%E6%88%AA%E5%9B%BE20200204100456.png" alt="分支冲突"></p>
+</li>
+<li><p>两个分支都修改文件同一个文件后的现象，然后手动修改文件，后期按下面步骤操作</p>
+</li>
+</ul>
+</li>
+<li><p>冲突解决方法</p>
+<ul>
+<li>第一步：编辑文件，删除特殊符号</li>
+<li>第二步：帮文件修改到满意的程度，保存退出</li>
+<li>第三步：git add 文件名 添加到暂存区</li>
+<li>第四步：git commit -m “日志信息”   注意：此时commit 后面一定不能带文件名</li>
+</ul>
+</li>
+</ul>
+<h2 id="四，Git基本原理"><a href="#四，Git基本原理" class="headerlink" title="四，Git基本原理"></a>四，Git基本原理</h2><p><strong>哈希</strong></p>
+<ul>
+<li><p>加密：在互联网上对文件进行加密，将明文转变为密文，如何将文件从明文转变为密文，是通过算法进行转变，而哈希算法是一个文件加密的常用算法</p>
+</li>
+<li><p>哈希是一个系列的加密算法，各个不同的哈希算法虽然加密强度不同，但是有以下几个共同点</p>
+<ul>
+<li>不管输入数据的数据量有多大，输入同一个哈希表，得到的加密结果长度固定</li>
+<li>哈希表确定，输入数据确定，输出数据能够保证不变</li>
+<li>哈希算法确定，数据数据有变化，输出数据一定变化，而且变化通常很大</li>
+<li>哈希算法不可逆</li>
+</ul>
+</li>
+<li><p>其实每一个版本的文件所拥有的哈希值就是通过哈希算法加密的密文</p>
+</li>
+</ul>
+<p><strong>Git的文件管理机制</strong></p>
+<ul>
+<li>Git把数据看作是小型文件系统的一组快照，每次提交更新的Git都会对当前的全部文件制作一个快照保存这个快照的索引，为了高效，如果文件没有修改，Git不再重新存储该文件，而是只保留一个链接指向之前保存的文件，所以Git的工作方式可以称之为快照流</li>
+</ul>
+<h2 id="五，github"><a href="#五，github" class="headerlink" title="五，github"></a>五，github</h2><ul>
+<li><p>本地库与远程库交互</p>
+<ul>
+<li>其实远程库是放在代码托管中心的，而github就是一个代码托管中心用于托管代码</li>
+<li>github上面的仓库就是远程库</li>
+</ul>
+</li>
+<li><p>创建远程库</p>
+<ul>
+<li>创建一个远程库就是在github上面创建一个仓库</li>
+</ul>
+</li>
+<li><p>本地库与远程库建立连接</p>
+<ul>
+<li>本地库与远程库之间建立连接，如何与远程库建立连接，通过远程库的地址与本地库之间建立连接，因为远程库存放于github服务器中，所以通过远程库的地址与本地库之间建立联系</li>
+<li>为远程库的地址取别名命令 git remote add 别名（如origin）   地址</li>
+</ul>
+</li>
+<li><p>将本地库文件推送到github上的远程方法</p>
+<ul>
+<li><a href="https://blog.csdn.net/Lucky_LXG/article/details/77849212" target="_blank" rel="noopener">本地库文件推送至远程库</a></li>
+</ul>
+</li>
+<li><p>仓库克隆</p>
+<ul>
+<li>多人开发项目时就用到克隆的这个操作，比如一个项目开发中组长创建一个本地库和远程库，在远程库中推送一些基础文件资料，这是其他的成员要加入开发，这是就可以将远程库中的文件拷贝到本地中，拷贝后会自动在你执行克隆命令的文件夹内生成一个本地库，其中有远程库中的所有文件，和组长本地库与远程库之间的设置</li>
+<li>克隆命令：<strong>git clone 远程库地址</strong></li>
+<li>完整的把远程库下载到本地</li>
+<li>创建远程库地址别名等设置</li>
+<li>初始化本地库</li>
+</ul>
+</li>
+<li><p>添加团队成员</p>
+<ul>
+<li><p>其他人员在克隆仓库后，虽然可以得到远程库创建人的设置文件，但是不能修改推送文件到远程库创建者的远程库文件，如果想要推送修改创建者远程库的文件就需要添加到团队</p>
+</li>
+<li><p>添加操作首先在git命令行要退出当前账号，不然还是一个用户推送肯定可以成功，如果在同一台电脑上首先要切换用户，如果没有登录弹窗，因为是windows具有账号自动登录，首先要帮记录删除</p>
+<p><img src="C:%5CUsers%5C253192967fa%5CDesktop%5C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CQQ%E6%88%AA%E5%9B%BE20200204175741.png" alt=""></p>
+</li>
+<li><p>我这里让我删除了，没有删除应该在普通凭证下面有一个.gtihub账号记录，你帮这个记录给删除之后你在git命令行就会弹出一个github账号登录弹窗，你在里面输入团队成员github账号即可<strong>其实你在两天电脑操作就不用这些，但是在一台电脑操作就需要首先切换github账号</strong></p>
+</li>
+</ul>
+</li>
+<li><p>远程库修改的拉取</p>
+<ul>
+<li>比如团队其它成员修改远程库中的文件后，其它成员或远程库创建者需要交修改后的文件拉取到本地库中，将本地库中的文件与远程库中的文件同步便于后期的开发</li>
+<li>命令：第一本将远程库下载到本地  git fetch  远程仓库地址  分支（master）。第二步合并分支 git  merge  仓库地址/分支   </li>
+</ul>
+</li>
+<li><p>协同开发之间的冲突解决</p>
+<ul>
+<li>github的修改推送一定在最新版的基础之上进行推送，也就是这个意思队员从远程库克隆一个仓库后，对仓库文件进行修改，但是在修改推送之前，另一个团员已经提前对这个远程库进行了修改，则不能进行推送，需要进行版本升级为最新版本 先执行命令  git pull origin master    版本更新后，解决冲突之后再执行推送命令</li>
+</ul>
+</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/02/06/Git%E4%B8%8Egithub%E5%85%A8%E9%9D%A2%E8%AE%B2%E8%A7%A3/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaWeb（一）-互联网原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
