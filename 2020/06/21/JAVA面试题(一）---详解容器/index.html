@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | FengYe&#39;s Blog</title>
+  <title>JAVA面试题(一）---详解容器 | FengYe&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FengYe&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="集合（容器）在JAVA编程中占极其重要的地位，在面试中也是必问的部分，今天对集合中比较重要及面试会问的的部分进行总结。 容器框架图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA面试题(一）---详解容器">
+<meta property="og:url" content="http://yoursite.com/2020/06/21/JAVA%E9%9D%A2%E8%AF%95%E9%A2%98(%E4%B8%80%EF%BC%89---%E8%AF%A6%E8%A7%A3%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="FengYe&#39;s Blog">
+<meta property="og:description" content="集合（容器）在JAVA编程中占极其重要的地位，在面试中也是必问的部分，今天对集合中比较重要及面试会问的的部分进行总结。 容器框架图">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://uploader.shimo.im/f/KZ5Z8NimgSGhGe7d.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/xESht2Nkq38y63aB.png!thumbnail">
+<meta property="article:published_time" content="2020-06-21T06:36:55.560Z">
+<meta property="article:modified_time" content="2020-06-21T06:36:44.451Z">
 <meta property="article:author" content="FengYe Fan">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://uploader.shimo.im/f/KZ5Z8NimgSGhGe7d.png!thumbnail">
   
     <link rel="alternative" href="/atom.xml" title="FengYe&#39;s Blog" type="application/atom+xml">
   
@@ -198,214 +205,353 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-JAVA面试题(一）---详解容器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      JAVA面试题(一）---详解容器
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/06/21/JAVA%E9%9D%A2%E8%AF%95%E9%A2%98(%E4%B8%80%EF%BC%89---%E8%AF%A6%E8%A7%A3%E5%AE%B9%E5%99%A8/" class="archive-article-date">
         <time datetime="2020-06-21T06:36:55.560Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-21</time>
 </a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.7k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">6分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="集合（容器）在JAVA编程中占极其重要的地位，在面试中也是必问的部分，今天对集合中比较重要及面试会问的的部分进行总结。"><a href="#集合（容器）在JAVA编程中占极其重要的地位，在面试中也是必问的部分，今天对集合中比较重要及面试会问的的部分进行总结。" class="headerlink" title="集合（容器）在JAVA编程中占极其重要的地位，在面试中也是必问的部分，今天对集合中比较重要及面试会问的的部分进行总结。"></a>集合（容器）在JAVA编程中占极其重要的地位，在面试中也是必问的部分，今天对集合中比较重要及面试会问的的部分进行总结。</h2><ol>
+<li><strong>容器框架图</strong></li>
+</ol>
+<a id="more"></a>
+
+<p><img src="https://uploader.shimo.im/f/KZ5Z8NimgSGhGe7d.png!thumbnail" alt="图片"></p>
+<ol start="2">
+<li>容器中的方法都是接口，其中容器的超级父类Collection的实现为<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public interface Collection&lt;E&gt;</span><br><span class="line"> extends Iterable&lt;E&gt;</span><br></pre></td></tr></table></figure></li>
+<li>** Collection 和 Collections 有什么区别？**</li>
+</ol>
+<ul>
+<li>** <strong>**Collection属于java.util包中，是一个集合接口（集合类的一个顶级接口，也就是类似于基本类的Object）。他提供了对集合对象的基本操作的通用接口方法。Collection接口在Java类库中有很多具体的实现。collection接口的意义是为各种具体的集合提供最大化的统一操作方式，器直接继承接口有list和set。</strong></li>
+<li><strong>Collections则是集合类中的一个工具类/帮助类，其中提供了一系列的静态方法，用于对集合中的元素进行排序、搜索以及保证线程安全等各种操作。</strong></li>
+</ul>
+<ol start="4">
+<li><strong>List、Set、Map 之间</strong></li>
+</ol>
+<p><img src="https://uploader.shimo.im/f/xESht2Nkq38y63aB.png!thumbnail" alt="图片"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List的实现方法：public interface List&lt;E&gt;</span><br><span class="line">extends Collection&lt;E&gt;</span><br><span class="line">此接口的用户可以对列表中每个元素的插入位置进行精确地控制。用户可以根据元素的整数索引（在列表中的位置）访问元素，并搜索列表中的元素。</span><br><span class="line">Set的实现方法：public interface Set&lt;E&gt;</span><br><span class="line">extends Collection&lt;E&gt;</span><br><span class="line">更确切地讲，set 不包含满足 e1.equals(e2) 的元素对 e1 和 e2，并且最多包含一个 null 元素。正如其名称所暗示的，此接口模仿了数学上的 set 抽象。</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><strong>HashMap 和 Hashtable 有什么区别？</strong></li>
+</ol>
+<ul>
+<li>hashMap去掉了HashTable 的contains方法，但是加上了containsValue（）和containsKey（）方法。</li>
+<li>hashTable同步的，而HashMap是非同步的，效率上逼hashTable要高。</li>
+<li>hashMap允许空键值，而hashTable不允许。</li>
+</ul>
+<ol start="6">
+<li><strong>如何决定使用 HashMap 还是 TreeMap？</strong></li>
+</ol>
+<p>对于在Map中插入、删除和定位元素这类操作，HashMap是最好的选择。然而，假如你需要对一个有序的key集合进行遍历，TreeMap是更好的选择。基于你的collection的大小，也许向HashMap中添加元素会更快，将map换为TreeMap进行有序key的遍历。</p>
+<ol start="7">
+<li><strong>HashMap 的实现原理？</strong></li>
+</ol>
+<ul>
+<li>HashMap的实现：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class HashMap&lt;K,V&gt;</span><br><span class="line">extends AbstractMap&lt;K,V&gt;</span><br><span class="line">implements Map&lt;K,V&gt;, Cloneable, Serializable</span><br></pre></td></tr></table></figure></li>
+<li>概述：HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。 </li>
+<li>HashMap的数据结构：在java编程语言中，最基本的结构就是两种，一个是数组，另外一个是模拟指针（引用），所有的数据结构都可以用这两个基本结构来构造的，HashMap也不例外。HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。</li>
+<li>当我们往Hashmap中put元素时,首先根据key的hashcode重新计算hash值,根绝hash值得到这个元素在数组中的位置(下标),如果该数组在该位置上已经存放了其他元素,那么在这个位置上的元素将以链表的形式存放,新加入的放在链头,最先加入的放入链尾.如果数组中该位置没有元素,就直接将该元素放到数组的该位置上。</li>
+<li>需要注意Jdk 1.8中对HashMap的实现做了优化,当链表中的节点数据超过八个之后,该链表会转为红黑树来提高查询效率,从原来的O(n)到O(logn)</li>
+</ul>
+<ol start="8">
+<li><strong>HashSet 的实现原理？</strong></li>
+</ol>
+<ul>
+<li><p>HashSet底层由HashMap实现</p>
+</li>
+<li><p>HashSet的值存放于HashMap的key上</p>
+</li>
+<li><p>HashMap的value统一为PRESENT</p>
+</li>
+</ul>
+<ol start="9">
+<li><strong>ArrayList 和 LinkedList 的区别是什么？</strong></li>
+</ol>
+<p>最明显的区别是 ArrrayList底层的数据结构是数组，支持随机访问，而 LinkedList 的底层数据结构是双向循环链表，不支持随机访问。使用下标访问一个元素，ArrayList 的时间复杂度是 O(1)，而 LinkedList 是 O(n)。</p>
+<ol start="10">
+<li><strong>如何实现数组和 List 之间的转换？</strong></li>
+</ol>
+<ul>
+<li>List转换成为数组：调用ArrayList的toArray方法。</li>
+<li>数组转换成为List：调用Arrays的asList方法。<h2 id=""><a href="#" class="headerlink" title=""></a></h2></li>
+</ul>
+<ol start="11">
+<li><strong>ArrayList 和 Vector 的区别是什么？</strong></li>
+</ol>
+<ul>
+<li><p>Vector是同步的，而ArrayList不是。然而，如果你寻求在迭代的时候对列表进行改变，你应该使用CopyOnWriteArrayList。 </p>
+</li>
+<li><p>ArrayList比Vector快，它因为有同步，不会过载。 </p>
+</li>
+<li><p>ArrayList更加通用，因为我们可以使用Collections工具类轻易地获取同步列表和只读列表。</p>
+<h2 id="13-Array-和-ArrayList-有何区别？"><a href="#13-Array-和-ArrayList-有何区别？" class="headerlink" title="13 Array 和 ArrayList 有何区别？"></a>13 <strong>Array 和 ArrayList 有何区别？</strong></h2></li>
+<li><p>Array可以容纳基本类型和对象，而ArrayList只能容纳对象。 </p>
+</li>
+<li><p>Array是指定大小的，而ArrayList大小是固定的。 </p>
+</li>
+<li><p>Array没有提供ArrayList那么多功能，比如addAll、removeAll和iterator等。</p>
+<h2 id="14-在-Queue-中-poll-和-remove-有什么区别？"><a href="#14-在-Queue-中-poll-和-remove-有什么区别？" class="headerlink" title="14. 在 Queue 中 poll()和 remove()有什么区别？"></a><strong>14. 在 Queue 中 poll()和 remove()有什么区别？</strong></h2></li>
+</ul>
+<p>poll() 和 remove() 都是从队列中取出一个元素，但是 poll() 在获取元素失败的时候会返回空，但是 remove() 失败的时候会抛出异常。</p>
+<h2 id="15-哪些集合类是线程安全的？"><a href="#15-哪些集合类是线程安全的？" class="headerlink" title="15. 哪些集合类是线程安全的？"></a><strong>15. 哪些集合类是线程安全的？</strong></h2><ul>
+<li>vector：就比arraylist多了个同步化机制（线程安全），因为效率较低，现在已经不太建议使用。在web应用中，特别是前台页面，往往效率（页面响应速度）是优先考虑的。</li>
+<li>statck：堆栈类，先进后出。</li>
+<li>hashtable：就比hashmap多了个线程安全。</li>
+<li>enumeration：枚举，相当于迭代器。<h2 id="16-迭代器-Iterator-是什么？"><a href="#16-迭代器-Iterator-是什么？" class="headerlink" title="16. 迭代器 Iterator 是什么？"></a><strong>16. 迭代器 Iterator 是什么？</strong></h2></li>
+</ul>
+<p>迭代器是一种设计模式，它是一个对象，它可以遍历并选择序列中的对象，而开发人员不需要了解该序列的底层结构。迭代器通常被称为“轻量级”对象，因为创建它的代价小。</p>
+<h2 id="17-Iterator-怎么使用？有什么特点？"><a href="#17-Iterator-怎么使用？有什么特点？" class="headerlink" title="17. Iterator 怎么使用？有什么特点？"></a><strong>17. Iterator 怎么使用？有什么特点？</strong></h2><p>Java中的Iterator功能比较简单，并且只能单向移动：</p>
+<p>(1) 使用方法iterator()要求容器返回一个Iterator。第一次调用Iterator的next()方法时，它返回序列的第一个元素。注意：iterator()方法是java.lang.Iterable接口,被Collection继承。</p>
+<p>(2) 使用next()获得序列中的下一个元素。</p>
+<p>(3) 使用hasNext()检查序列中是否还有元素。</p>
+<p>(4) 使用remove()将迭代器新返回的元素删除。</p>
+<p>Iterator是Java迭代器最简单的实现，为List设计的ListIterator具有更多的功能，它可以从两个方向遍历List，也可以从List中插入和删除元素。</p>
+<h2 id="18-Iterator-和-ListIterator-有什么区别？"><a href="#18-Iterator-和-ListIterator-有什么区别？" class="headerlink" title="18. Iterator 和 ListIterator 有什么区别？"></a><strong>18. Iterator 和 ListIterator 有什么区别？</strong></h2><ul>
+<li>Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历List。 </li>
+<li>Iterator对集合只能是前向遍历，ListIterator既可以前向也可以后向。 </li>
+<li>ListIterator实现了Iterator接口，并包含其他的功能，比如：增加元素，替换元素，获取前一个和后一个元素的索引，等等。</li>
+</ul>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/06/21/JAVA%E9%9D%A2%E8%AF%95%E9%A2%98(%E4%B8%80%EF%BC%89---%E8%AF%A6%E8%A7%A3%E5%AE%B9%E5%99%A8/" target="_blank">JAVA面试题(一）---详解容器</a>
-  
-    </h1>
-  
+      </a>
+    </div>
+    
 
-
-        <div class="article-info info-on-right">
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          FengYe Fan
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://yoursite.com/2020/06/21/JAVA面试题(一）---详解容器/" title="JAVA面试题(一）---详解容器" target="_blank">http://yoursite.com/2020/06/21/JAVA面试题(一）---详解容器/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/21/JAVA%E9%9D%A2%E8%AF%95%E9%A2%98(%E4%B8%80%EF%BC%89---%E8%AF%A6%E8%A7%A3%E5%AE%B9%E5%99%A8/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/03/%E4%B8%8D%E6%87%82Get%E4%B8%8EPost%E8%BF%98%E8%83%BD%E7%AE%97%E6%87%82servlet%E5%90%97/" class="archive-article-date">
-        <time datetime="2020-05-03T12:17:10.246Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/03/%E4%B8%8D%E6%87%82Get%E4%B8%8EPost%E8%BF%98%E8%83%BD%E7%AE%97%E6%87%82servlet%E5%90%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">不懂Get与Post还能算懂servlet吗</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/03/%E4%B8%8D%E6%87%82Get%E4%B8%8EPost%E8%BF%98%E8%83%BD%E7%AE%97%E6%87%82servlet%E5%90%97/" target="_blank">不懂Get与Post还能算懂servlet吗</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/06/Git%E4%B8%8Egithub%E5%85%A8%E9%9D%A2%E8%AE%B2%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-02-06T01:31:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-06</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/06/Git%E4%B8%8Egithub%E5%85%A8%E9%9D%A2%E8%AE%B2%E8%A7%A3/" target="_blank">Git与github全面讲解.md</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/18/JavaWeb%EF%BC%88%E4%B8%80%EF%BC%89-%E4%BA%92%E8%81%94%E7%BD%91%E5%8E%9F%E7%90%86/" class="archive-article-date">
-        <time datetime="2020-01-18T10:15:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/18/JavaWeb%EF%BC%88%E4%B8%80%EF%BC%89-%E4%BA%92%E8%81%94%E7%BD%91%E5%8E%9F%E7%90%86/" target="_blank">JavaWeb（一）-----互联网原理</a>
-  
-    </h1>
-  
+<div id="SOHUCS" sid="JAVA面试题(一）---详解容器" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-javaweb（一）-----互联网原理">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/18/JavaWeb%EF%BC%88%E4%BA%8C%EF%BC%89-html%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-        <time datetime="2020-01-18T10:14:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname =
+    'true'; // required: replace example with your forum shortname
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/18/JavaWeb%EF%BC%88%E4%BA%8C%EF%BC%89-html%E5%9F%BA%E7%A1%80/" target="_blank">JavaWeb（二）-----html基础</a>
-  
-    </h1>
-  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by
+      Disqus.</a></noscript>
+</section>
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/08/Markdown%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-01-08T05:46:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/08/Markdown%E8%AF%A6%E8%A7%A3/" target="_blank">Markdown详解</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
 
 
           </div>
@@ -446,8 +592,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
