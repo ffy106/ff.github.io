@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java算法（一）------  平衡二叉树的判断 | FengYe&#39;s Blog</title>
+  <title>JAVA算法（二）----路径总和 | FengYe&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="什么是平衡二叉树？  平衡二叉树也叫AVL树，它或者是一颗空树，或者具有以下性质的二叉排序树：树中任意一个节点的两棵子树高度差的绝对值小于或等于零。  什么是树的高度？  树的高度指的是，从根结点到树的叶子节点的路径长（最长的一条）。">
+  <meta name="description" content="题目描述：给定一个二叉树，它的每个结点都存放着一个整数值。 找出路径和等于给定数值的路径总数。 路径不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java算法（一）------  平衡二叉树的判断">
-<meta property="og:url" content="http://yoursite.com/2020/06/24/Java%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89------%20%20%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%88%A4%E6%96%AD/index.html">
+<meta property="og:title" content="JAVA算法（二）----路径总和">
+<meta property="og:url" content="http://yoursite.com/2020/06/24/JAVA%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89----%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C/index.html">
 <meta property="og:site_name" content="FengYe&#39;s Blog">
-<meta property="og:description" content="什么是平衡二叉树？  平衡二叉树也叫AVL树，它或者是一颗空树，或者具有以下性质的二叉排序树：树中任意一个节点的两棵子树高度差的绝对值小于或等于零。  什么是树的高度？  树的高度指的是，从根结点到树的叶子节点的路径长（最长的一条）。">
+<meta property="og:description" content="题目描述：给定一个二叉树，它的每个结点都存放着一个整数值。 找出路径和等于给定数值的路径总数。 路径不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-24T11:46:00.518Z">
-<meta property="article:modified_time" content="2020-06-24T13:56:32.476Z">
+<meta property="og:image" content="https://uploader.shimo.im/f/uUaYNXKJI1yPBfNg.png!thumbnail">
+<meta property="article:published_time" content="2020-06-24T13:51:01.907Z">
+<meta property="article:modified_time" content="2020-06-24T13:48:33.335Z">
 <meta property="article:author" content="FengYe Fan">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://uploader.shimo.im/f/uUaYNXKJI1yPBfNg.png!thumbnail">
   
     <link rel="alternative" href="/atom.xml" title="FengYe&#39;s Blog" type="application/atom+xml">
   
@@ -202,14 +204,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java算法（一）------  平衡二叉树的判断" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JAVA算法（二）----路径总和" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Java算法（一）------  平衡二叉树的判断
+      JAVA算法（二）----路径总和
     </h1>
   
 
@@ -221,8 +223,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/06/24/Java%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89------%20%20%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%88%A4%E6%96%AD/" class="archive-article-date">
-        <time datetime="2020-06-24T11:46:00.518Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-24</time>
+<a href="/2020/06/24/JAVA%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89----%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C/" class="archive-article-date">
+        <time datetime="2020-06-24T13:51:01.907Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-24</time>
 </a>
 
   
@@ -235,7 +237,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">752字</span>
+      <span class="post-count">479字</span>
     </span>
   </span>
 
@@ -244,7 +246,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">1分</span>
     </span>
   </span>
 </div>
@@ -255,26 +257,33 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <ol>
-<li>什么是平衡二叉树？</li>
-</ol>
-<p>平衡二叉树也叫AVL树，它或者是一颗空树，或者具有以下性质的二叉排序树：树中任意一个节点的两棵子树高度差的绝对值小于或等于零。</p>
-<ul>
-<li><p>什么是树的高度？</p>
-<p> 树的高度指的是，从根结点到树的叶子节点的路径长（最长的一条）。</p>
-</li>
-</ul>
+    <h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h2><p>给定一个二叉树，它的每个结点都存放着一个整数值。</p>
+<p>找出路径和等于给定数值的路径总数。</p>
+<p>路径不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。</p>
 <a id="more"></a>
 
+<p><img src="https://uploader.shimo.im/f/uUaYNXKJI1yPBfNg.png!thumbnail" alt="图片"></p>
+<p>算法：</p>
+<p>这里采用递归的方法来进行讲解。</p>
 <ol>
-<li>平衡二叉树的判定算法？</li>
+<li><strong>找到最简单的子问题求解：为空树的时候</strong></li>
+</ol>
+<p>首先，最简单的子问题是什么呢？由于这道题是在树的框架下，我们最容易想到的就是遍历的终止条件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(root &#x3D;&#x3D; null)&#123;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>接下来，我们来考虑再上升的一个层次，题目要求 路径不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点） 。这就要求我们只需要去求三部分即可：</li>
 </ol>
 <ul>
-<li>想要判断是否是平衡二叉树，首先判断节点的左右两棵子树的高度。</li>
-<li>计算树的高度？</li>
-<li>二叉树判定算法实现。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">class TreeNode &#123;</span><br><span class="line">    Object val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line">    TreeNode(Object x) &#123; val &#x3D; x; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Demo01 &#123;</span><br><span class="line">    public static TreeNode constructTree(Object nums[])&#123;</span><br><span class="line">        &#x2F;&#x2F;如果传过来的数组为空，则返回一个空值</span><br><span class="line">        if(nums.length&#x3D;&#x3D;0) return null;</span><br><span class="line">        &#x2F;&#x2F;当传过来的数组不为空时</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * Deque双端队列，支持在队列的两端插入元素</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Deque&lt;TreeNode&gt; nodeQueue&#x3D;new LinkedList&lt;&gt;();</span><br><span class="line">        &#x2F;&#x2F;创建一个根节点,根节点为数组的第一个值</span><br><span class="line">        TreeNode root&#x3D;new TreeNode(nums[0]);</span><br><span class="line">        &#x2F;&#x2F;将指定的元素插入此队列nodeQueue.offer</span><br><span class="line">        nodeQueue.offer(root);</span><br><span class="line">        TreeNode cur;</span><br><span class="line">        &#x2F;&#x2F;记录当前行节点的数量（注意不一定是2的幂，是上一行的非空节点的2倍）</span><br><span class="line">        int lineNodeNum&#x3D;2;</span><br><span class="line">        &#x2F;&#x2F;记录当前行中数字在数组中的开始位置</span><br><span class="line">        int  startIndex&#x3D;1;</span><br><span class="line">        &#x2F;&#x2F;记录数组中剩余的元素的数量</span><br><span class="line">        int restLength&#x3D;nums.length-1;</span><br><span class="line">        while(restLength&gt;0)&#123;</span><br><span class="line">            for(int i&#x3D;startIndex;i&lt;startIndex+lineNodeNum;i&#x3D;i+2)&#123;</span><br><span class="line">                &#x2F;&#x2F;说明已将将数组中的数组用完了，就可以直接返回root</span><br><span class="line">                if(i&#x3D;&#x3D;nums.length) return root;</span><br><span class="line">                &#x2F;&#x2F;移除此队列的头nodeQueue.poll</span><br><span class="line">                cur&#x3D;nodeQueue.poll();</span><br><span class="line">                if(nums[i]!&#x3D;null)&#123;</span><br><span class="line">                    cur.left&#x3D;new TreeNode(nums[i]);</span><br><span class="line">                    nodeQueue.offer(cur.left);</span><br><span class="line">                &#125;</span><br><span class="line">                &#x2F;&#x2F; 同上，说明已经将nums中的数字用完，此时应停止遍历，并可以直接返回root</span><br><span class="line">                if(i+1&#x3D;&#x3D;nums.length) return root;</span><br><span class="line">                if (nums[i + 1] !&#x3D; null) &#123;</span><br><span class="line">                    cur.right &#x3D; new TreeNode(nums[i + 1]);</span><br><span class="line">                    nodeQueue.offer(cur.right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            startIndex+&#x3D;lineNodeNum;</span><br><span class="line">            restLength-&#x3D;lineNodeNum;</span><br><span class="line">            lineNodeNum&#x3D;nodeQueue.size()*2;</span><br><span class="line">        &#125;</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void preOrderTravel(TreeNode root)&#123;</span><br><span class="line">        if(root&#x3D;&#x3D;null)&#123;</span><br><span class="line">            return ;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(root.val);</span><br><span class="line">        preOrderTravel(root.left);</span><br><span class="line">        preOrderTravel(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 判断二叉树的平衡性</span><br><span class="line">     *解析：什么是平衡二叉树？</span><br><span class="line">     *</span><br><span class="line">     * @param root</span><br><span class="line">     * @return</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public  static  boolean isBalanced(TreeNode root) &#123;</span><br><span class="line">   int []isBalanced&#x3D;&#123;1&#125;;</span><br><span class="line">   isBalanced(root,isBalanced);</span><br><span class="line">   return isBalanced[0]&gt;0;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;isBalanced用来判断一棵树是否平衡</span><br><span class="line">    public static int isBalanced(TreeNode root,int []isBalanced)&#123;</span><br><span class="line">        if(root&#x3D;&#x3D;null) return 0;</span><br><span class="line">        &#x2F;&#x2F;分别求左子树的高度</span><br><span class="line">        int lh&#x3D;isBalanced(root.left,isBalanced);</span><br><span class="line">        &#x2F;&#x2F;右子树的高度</span><br><span class="line">        int rh&#x3D;isBalanced(root.right,isBalanced);</span><br><span class="line">        &#x2F;&#x2F;如果两棵子树的高度差绝对值大于1，表示不平衡</span><br><span class="line">        if(Math.abs(lh-rh)&gt;1)&#123;</span><br><span class="line">            isBalanced[0]&#x3D;-1;</span><br><span class="line">        &#125;</span><br><span class="line">        return Math.max(lh,rh)+1;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">       Object []a&#x3D;new Object[]&#123;1,2,2,3,3,null,null,4,4&#125;;</span><br><span class="line">        TreeNode  root&#x3D; constructTree(a);</span><br><span class="line">        System.out.println(isBalanced(root));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>以当前节点作为头结点的路径数量</li>
+<li>以当前节点的左孩子作为头结点的路径数量</li>
+<li>以当前节点的右孩子作为头结点啊路径数量</li>
 </ul>
+<p>将这三部分之和作为最后结果即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int pathSum(TreeNode root, int sum) &#123;</span><br><span class="line">        if(root &#x3D;&#x3D; null)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        int result &#x3D; countPath(root,sum);</span><br><span class="line">        int a &#x3D; pathSum(root.left,sum);</span><br><span class="line">        int b &#x3D; pathSum(root.right,sum);</span><br><span class="line">        return result+a+b;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    public int countPath(TreeNode root,int sum)&#123;</span><br><span class="line">        if(root &#x3D;&#x3D; null)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        sum &#x3D; sum - root.val;</span><br><span class="line">        int result &#x3D; sum &#x3D;&#x3D; 0 ? 1:0;</span><br><span class="line">        return result + countPath(root.left,sum) + countPath(root.right,sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>总结：</li>
+</ol>
+<p>本题主要是使用递归来进行路径总和的计算，主要是进行分解，将数的节点进行分解，分解为三大部分，根节点为起始点时，左子树为起始点时，右子树为起始点时来进行计算。</p>
 
     
 
@@ -321,7 +330,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://yoursite.com/2020/06/24/Java算法（一）------  平衡二叉树的判断/" title="Java算法（一）------  平衡二叉树的判断" target="_blank">http://yoursite.com/2020/06/24/Java算法（一）------  平衡二叉树的判断/</a>
+          <a href="http://yoursite.com/2020/06/24/JAVA算法（二）----路径总和/" title="JAVA算法（二）----路径总和" target="_blank">http://yoursite.com/2020/06/24/JAVA算法（二）----路径总和/</a>
         </li>
         
         <li>
@@ -388,7 +397,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/24/Java%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89------%20%20%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%88%A4%E6%96%AD/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/24/JAVA%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89----%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -403,18 +412,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/06/24/JAVA%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89----%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JAVA算法（二）----路径总和
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/24/Java%E9%9D%A2%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89-----%E9%9B%86%E5%90%88%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java面试（二）-----集合的前世今生</div>
+    <a href="/2020/06/24/Java%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89------%20%20%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%88%A4%E6%96%AD/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java算法（一）------  平衡二叉树的判断</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -441,7 +441,7 @@
 
 
 
-<div id="SOHUCS" sid="Java算法（一）------  平衡二叉树的判断" ></div> 
+<div id="SOHUCS" sid="JAVA算法（二）----路径总和" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
