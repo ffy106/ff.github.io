@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | FengYe&#39;s Blog</title>
+  <title>Java算法（一）------  平衡二叉树的判断 | FengYe&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FengYe&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="什么是平衡二叉树？  平衡二叉树也叫AVL树，它或者是一颗空树，或者具有以下性质的二叉排序树：树中任意一个节点的两棵子树高度差的绝对值小于或等于零。  什么是树的高度？ 树的高度指的是，从根结点到树的叶子节点的路径长（最长的一条）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java算法（一）------  平衡二叉树的判断">
+<meta property="og:url" content="http://yoursite.com/2020/06/24/Java%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89------%20%20%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%88%A4%E6%96%AD/index.html">
 <meta property="og:site_name" content="FengYe&#39;s Blog">
+<meta property="og:description" content="什么是平衡二叉树？  平衡二叉树也叫AVL树，它或者是一颗空树，或者具有以下性质的二叉排序树：树中任意一个节点的两棵子树高度差的绝对值小于或等于零。  什么是树的高度？ 树的高度指的是，从根结点到树的叶子节点的路径长（最长的一条）。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://uploader.shimo.im/f/KvLuyzrZnI4AD3cM.png!thumbnail">
+<meta property="article:published_time" content="2020-06-24T11:46:00.518Z">
+<meta property="article:modified_time" content="2020-06-24T11:46:08.962Z">
 <meta property="article:author" content="FengYe Fan">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://uploader.shimo.im/f/KvLuyzrZnI4AD3cM.png!thumbnail">
   
     <link rel="alternative" href="/atom.xml" title="FengYe&#39;s Blog" type="application/atom+xml">
   
@@ -198,320 +204,274 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Java算法（一）------  平衡二叉树的判断" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      Java算法（一）------  平衡二叉树的判断
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/06/24/Java%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89------%20%20%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%88%A4%E6%96%AD/" class="archive-article-date">
         <time datetime="2020-06-24T11:46:00.518Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-24</time>
 </a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">752字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <ol>
+<li>什么是平衡二叉树？</li>
+</ol>
+<p>平衡二叉树也叫AVL树，它或者是一颗空树，或者具有以下性质的二叉排序树：树中任意一个节点的两棵子树高度差的绝对值小于或等于零。</p>
+<ul>
+<li><p>什么是树的高度？</p>
+<pre><code>树的高度指的是，从根结点到树的叶子节点的路径长（最长的一条）。</code></pre></li>
+</ul>
+<a id="more"></a>
+
+<ol>
+<li>平衡二叉树的判定算法？</li>
+</ol>
+<ul>
+<li>想要判断是否是平衡二叉树，首先判断节点的左右两棵子树的高度。</li>
+<li>计算树的高度？</li>
+<li>二叉树判定算法实现。</li>
+<li><img src="https://uploader.shimo.im/f/KvLuyzrZnI4AD3cM.png!thumbnail" alt="图片"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">class TreeNode &#123;</span><br><span class="line">    Object val;</span><br><span class="line">    TreeNode left;</span><br><span class="line">    TreeNode right;</span><br><span class="line">    TreeNode(Object x) &#123; val &#x3D; x; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Demo01 &#123;</span><br><span class="line">    public static TreeNode constructTree(Object nums[])&#123;</span><br><span class="line">        &#x2F;&#x2F;如果传过来的数组为空，则返回一个空值</span><br><span class="line">        if(nums.length&#x3D;&#x3D;0) return null;</span><br><span class="line">        &#x2F;&#x2F;当传过来的数组不为空时</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * Deque双端队列，支持在队列的两端插入元素</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Deque&lt;TreeNode&gt; nodeQueue&#x3D;new LinkedList&lt;&gt;();</span><br><span class="line">        &#x2F;&#x2F;创建一个根节点,根节点为数组的第一个值</span><br><span class="line">        TreeNode root&#x3D;new TreeNode(nums[0]);</span><br><span class="line">        &#x2F;&#x2F;将指定的元素插入此队列nodeQueue.offer</span><br><span class="line">        nodeQueue.offer(root);</span><br><span class="line">        TreeNode cur;</span><br><span class="line">        &#x2F;&#x2F;记录当前行节点的数量（注意不一定是2的幂，是上一行的非空节点的2倍）</span><br><span class="line">        int lineNodeNum&#x3D;2;</span><br><span class="line">        &#x2F;&#x2F;记录当前行中数字在数组中的开始位置</span><br><span class="line">        int  startIndex&#x3D;1;</span><br><span class="line">        &#x2F;&#x2F;记录数组中剩余的元素的数量</span><br><span class="line">        int restLength&#x3D;nums.length-1;</span><br><span class="line">        while(restLength&gt;0)&#123;</span><br><span class="line">            for(int i&#x3D;startIndex;i&lt;startIndex+lineNodeNum;i&#x3D;i+2)&#123;</span><br><span class="line">                &#x2F;&#x2F;说明已将将数组中的数组用完了，就可以直接返回root</span><br><span class="line">                if(i&#x3D;&#x3D;nums.length) return root;</span><br><span class="line">                &#x2F;&#x2F;移除此队列的头nodeQueue.poll</span><br><span class="line">                cur&#x3D;nodeQueue.poll();</span><br><span class="line">                if(nums[i]!&#x3D;null)&#123;</span><br><span class="line">                    cur.left&#x3D;new TreeNode(nums[i]);</span><br><span class="line">                    nodeQueue.offer(cur.left);</span><br><span class="line">                &#125;</span><br><span class="line">                &#x2F;&#x2F; 同上，说明已经将nums中的数字用完，此时应停止遍历，并可以直接返回root</span><br><span class="line">                if(i+1&#x3D;&#x3D;nums.length) return root;</span><br><span class="line">                if (nums[i + 1] !&#x3D; null) &#123;</span><br><span class="line">                    cur.right &#x3D; new TreeNode(nums[i + 1]);</span><br><span class="line">                    nodeQueue.offer(cur.right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            startIndex+&#x3D;lineNodeNum;</span><br><span class="line">            restLength-&#x3D;lineNodeNum;</span><br><span class="line">            lineNodeNum&#x3D;nodeQueue.size()*2;</span><br><span class="line">        &#125;</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void preOrderTravel(TreeNode root)&#123;</span><br><span class="line">        if(root&#x3D;&#x3D;null)&#123;</span><br><span class="line">            return ;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(root.val);</span><br><span class="line">        preOrderTravel(root.left);</span><br><span class="line">        preOrderTravel(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 判断二叉树的平衡性</span><br><span class="line">     *解析：什么是平衡二叉树？</span><br><span class="line">     *</span><br><span class="line">     * @param root</span><br><span class="line">     * @return</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public  static  boolean isBalanced(TreeNode root) &#123;</span><br><span class="line">   int []isBalanced&#x3D;&#123;1&#125;;</span><br><span class="line">   isBalanced(root,isBalanced);</span><br><span class="line">   return isBalanced[0]&gt;0;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;isBalanced用来判断一棵树是否平衡</span><br><span class="line">    public static int isBalanced(TreeNode root,int []isBalanced)&#123;</span><br><span class="line">        if(root&#x3D;&#x3D;null) return 0;</span><br><span class="line">        &#x2F;&#x2F;分别求左子树的高度</span><br><span class="line">        int lh&#x3D;isBalanced(root.left,isBalanced);</span><br><span class="line">        &#x2F;&#x2F;右子树的高度</span><br><span class="line">        int rh&#x3D;isBalanced(root.right,isBalanced);</span><br><span class="line">        &#x2F;&#x2F;如果两棵子树的高度差绝对值大于1，表示不平衡</span><br><span class="line">        if(Math.abs(lh-rh)&gt;1)&#123;</span><br><span class="line">            isBalanced[0]&#x3D;-1;</span><br><span class="line">        &#125;</span><br><span class="line">        return Math.max(lh,rh)+1;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">       Object []a&#x3D;new Object[]&#123;1,2,2,3,3,null,null,4,4&#125;;</span><br><span class="line">        TreeNode  root&#x3D; constructTree(a);</span><br><span class="line">        System.out.println(isBalanced(root));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/06/24/Java%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89------%20%20%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%88%A4%E6%96%AD/" target="_blank">Java算法（一）------  平衡二叉树的判断</a>
-  
-    </h1>
-  
+      </a>
+    </div>
+    
 
-
-        <div class="article-info info-on-right">
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          FengYe Fan
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://yoursite.com/2020/06/24/Java算法（一）------  平衡二叉树的判断/" title="Java算法（一）------  平衡二叉树的判断" target="_blank">http://yoursite.com/2020/06/24/Java算法（一）------  平衡二叉树的判断/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/24/Java%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89------%20%20%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%88%A4%E6%96%AD/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/06/24/Java%E9%9D%A2%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89-----%E9%9B%86%E5%90%88%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" class="archive-article-date">
-        <time datetime="2020-06-24T01:06:25.211Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-24</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/24/Java%E9%9D%A2%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89-----%E9%9B%86%E5%90%88%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java面试（二）-----集合的前世今生</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/06/24/Java%E9%9D%A2%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89-----%E9%9B%86%E5%90%88%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" target="_blank">Java面试（二）-----集合的前世今生</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/06/22/%E7%9C%8B%E5%AE%8C%E8%BF%98%E6%95%A2%E8%AF%B4%E5%88%86%E4%B8%8D%E6%B8%85Get%E4%B8%8EPost%E7%9A%84%E5%8C%BA%E5%88%AB%E5%90%97/" class="archive-article-date">
-        <time datetime="2020-06-22T06:19:14.606Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/06/22/%E7%9C%8B%E5%AE%8C%E8%BF%98%E6%95%A2%E8%AF%B4%E5%88%86%E4%B8%8D%E6%B8%85Get%E4%B8%8EPost%E7%9A%84%E5%8C%BA%E5%88%AB%E5%90%97/" target="_blank">看完还敢说分不清Get与Post的区别吗</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/06/21/JAVA%E9%9D%A2%E8%AF%95%E9%A2%98(%E4%B8%80%EF%BC%89---%E8%AF%A6%E8%A7%A3%E9%9B%86%E5%90%88/" class="archive-article-date">
-        <time datetime="2020-06-21T06:36:43.420Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/06/21/JAVA%E9%9D%A2%E8%AF%95%E9%A2%98(%E4%B8%80%EF%BC%89---%E8%AF%A6%E8%A7%A3%E9%9B%86%E5%90%88/" target="_blank">JAVA面试题(一）---详解集合</a>
-  
-    </h1>
-  
+<div id="SOHUCS" sid="Java算法（一）------  平衡二叉树的判断" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/06/Git%E4%B8%8Egithub%E5%85%A8%E9%9D%A2%E8%AE%B2%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-02-06T01:31:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-06</time>
-</a>
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname =
+    'true'; // required: replace example with your forum shortname
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/06/Git%E4%B8%8Egithub%E5%85%A8%E9%9D%A2%E8%AE%B2%E8%A7%A3/" target="_blank">Git与github全面讲解.md</a>
-  
-    </h1>
-  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by
+      Disqus.</a></noscript>
+</section>
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/18/JavaWeb%EF%BC%88%E4%B8%80%EF%BC%89-%E4%BA%92%E8%81%94%E7%BD%91%E5%8E%9F%E7%90%86/" class="archive-article-date">
-        <time datetime="2020-01-18T10:15:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/18/JavaWeb%EF%BC%88%E4%B8%80%EF%BC%89-%E4%BA%92%E8%81%94%E7%BD%91%E5%8E%9F%E7%90%86/" target="_blank">JavaWeb（一）-----互联网原理</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-javaweb（一）-----互联网原理">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/18/JavaWeb%EF%BC%88%E4%BA%8C%EF%BC%89-html%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-        <time datetime="2020-01-18T10:14:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/18/JavaWeb%EF%BC%88%E4%BA%8C%EF%BC%89-html%E5%9F%BA%E7%A1%80/" target="_blank">JavaWeb（二）-----html基础</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/08/Markdown%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-01-08T05:46:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/08/Markdown%E8%AF%A6%E8%A7%A3/" target="_blank">Markdown详解</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/12/24/hello-world/" class="archive-article-date">
-        <time datetime="2019-12-24T09:43:18.186Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-24</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/12/24/hello-world/" target="_blank">Hello World</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -552,8 +512,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
